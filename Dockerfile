@@ -1,8 +1,16 @@
 FROM node:18
 
-# Install multiple OpenJDK versions
-RUN apt-get update && \
-    apt-get install -y openjdk-8-jre openjdk-11-jre openjdk-17-jre
+# Install dependencies for SDKMAN and Java
+RUN apt-get update && apt-get install -y curl zip unzip
+
+# Install SDKMAN
+RUN curl -s "https://get.sdkman.io" | bash
+
+# Install OpenJDK 8, 11, and 17 using SDKMAN
+RUN bash -c "source /root/.sdkman/bin/sdkman-init.sh && \
+    sdk install java 8.0.402-tem && \
+    sdk install java 11.0.23-tem && \
+    sdk install java 17.0.11-tem"
 
 WORKDIR /app
 

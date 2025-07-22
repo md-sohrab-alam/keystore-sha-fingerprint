@@ -34,14 +34,14 @@ router.post('/upload', upload.single('keystore'), (req, res) => {
   let keytoolPath;
   switch (javaVersion) {
     case '8':
-      keytoolPath = '/usr/lib/jvm/java-8-openjdk-amd64/bin/keytool';
+      keytoolPath = '/root/.sdkman/candidates/java/8.0.402-tem/bin/keytool';
       break;
     case '11':
-      keytoolPath = '/usr/lib/jvm/java-11-openjdk-amd64/bin/keytool';
+      keytoolPath = '/root/.sdkman/candidates/java/11.0.23-tem/bin/keytool';
       break;
     case '17':
     default:
-      keytoolPath = '/usr/lib/jvm/java-17-openjdk-amd64/bin/keytool';
+      keytoolPath = '/root/.sdkman/candidates/java/17.0.11-tem/bin/keytool';
       break;
   }
   // Build keytool command
