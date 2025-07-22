@@ -15,9 +15,15 @@
     <% if (result) { %>
       <div class="alert alert-success">
         <h5>SHA-1:</h5>
-        <code><%= result.sha1 %></code><br>
+        <div class="input-group mb-2">
+          <input type="text" class="form-control" id="sha1" value="<%= result.sha1 %>" readonly>
+          <button class="btn btn-outline-secondary" type="button" onclick="copyToClipboard('sha1', this)">Copy</button>
+        </div>
         <h5 class="mt-3">SHA-256:</h5>
-        <code><%= result.sha256 %></code>
+        <div class="input-group mb-2">
+          <input type="text" class="form-control" id="sha256" value="<%= result.sha256 %>" readonly>
+          <button class="btn btn-outline-secondary" type="button" onclick="copyToClipboard('sha256', this)">Copy</button>
+        </div>
       </div>
     <% } %>
     <form action="/upload" method="POST" enctype="multipart/form-data" class="mt-4">
@@ -48,5 +54,15 @@
       <button type="submit" class="btn btn-primary">Generate Fingerprints</button>
     </form>
   </div>
+  <script>
+    function copyToClipboard(id, btn) {
+      const input = document.getElementById(id);
+      input.select();
+      input.setSelectionRange(0, 99999); // For mobile
+      document.execCommand('copy');
+      btn.innerText = 'Copied!';
+      setTimeout(() => { btn.innerText = 'Copy'; }, 1200);
+    }
+  </script>
 </body>
 </html> 
