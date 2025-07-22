@@ -1,8 +1,15 @@
 {
+  "name": "keystore-sha-fingerprint",
+  "version": "1.0.0",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "build": "echo 'No build step required'"
   },
-  "description": "Keystore SHA Fingerprint Generator: Upload .jks and get SHA-1/SHA-256 fingerprints."
+  "description": "Keystore SHA Fingerprint Generator: Upload .jks and get SHA-1/SHA-256 fingerprints.",
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "ejs": "^3.1.9"
+  }
 } 
