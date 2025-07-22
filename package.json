@@ -1,0 +1,8 @@
+{
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build": "echo 'No build step required'"
+  },
+  "description": "Keystore SHA Fingerprint Generator: Upload .jks and get SHA-1/SHA-256 fingerprints."
+} 
