@@ -1,7 +1,7 @@
 # Keystore SHA Fingerprint Generator
 
 A web app to generate SHA-1 and SHA-256 fingerprints from `.jks` keystore files using any of Java 8, 11, or 17—no Java required for end users!
-
+Live: https://keystore-sha-fingerprint.onrender.com
 ## Features
 - Upload a `.jks` keystore file (max 5MB)
 - Enter keystore password, key alias, and optional key password
